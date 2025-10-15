@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 后代选择器 */
+        /* div p {
+            color: yellowgreen;
+        } */
+        /* 子选择器 */
+        /* div > p {
+            color: yellowgreen;
+        } */
+        /* 并集选择器 */
+        /* p,h4 {
+            color: yellowgreen;
+        } */
+        /* 链接伪类选择器 */
+        a:link {
+            color: rgb(27, 176, 89);
+        }
+        a:visited {
+            color: purple;
+        }
+        a:hover {
+            color: violet;
+        }
+        /* 伪类选择器 */
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>
+            1
+            <ul>
+                <li><p>1</p></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </p>
+    </div>
+    <!-- 链接伪类选择器 -->
+    <ul>
+        <!-- 注意链接的写法 -->
+        <li><a href="https://www.example.com">未访问的链接</a></li>
+        <li><a href="https://www.google.com">可能已访问的链接</a></li>
+    </ul>
+    <!-- 伪类选择器 -->
+     <!-- 如果使用的是类选择器也可以这样用 -->
+    <!-- <div class="button">yes</div> -->
+    <button>yes</button>
+</body>
+</html>

@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icon/iconfont.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: 0;
+        }
+
+        body {
+            /* ? */
+            min-height: 100vh;
+            /* min-width: 1920px; */
+            height: 4450px;
+            background-color: #8a5e38;
+            position: relative;
+            /* 因为footer要定位嘛 定位不成要看父元素有没有定位 */
+        }       
+    </style>
+</head>
+
+<body>
+    <div class="nav">
+        <a href="#sec_head" class="nav_icon">
+            <i class="iconfont icon-zhuye"></i>
+            <!-- iconfont的这个类名是统一的 -->
+            <span>HOME</span>
+            <!-- 名字 -->
+        </a>
+        <a href="#sec_card" class="nav_icon">
+            <i class="iconfont icon-mingpian"></i>
+            <span>CARD</span>
+        </a>
+        <a href="#sec_intro" class="nav_icon">
+            <i class="iconfont icon-jieshao"></i>
+            <span>INTRO</span>
+        </a>
+        <a href="#sec_hobby" class="nav_icon">
+            <i class="iconfont icon-shipin"></i>
+            <span>HOBBY</span>
+        </a>
+        <a href="#sec_cats" class="nav_icon">
+            <i class="iconfont icon-iconfontzhizuobiaozhun023143"></i>
+            <span>CATS</span>
+        </a>
+        <a href="#sec_music" class="nav_icon">
+            <i class="iconfont icon-yinle"></i>
+            <span>MUSIC</span>
+        </a>
+    </div>
+    <section id="sec_head">
+        <img src="./img/head_behind.png" id="behind" class="photo1">
+        <h2 id="sec1_text">MEOW'S<br>&nbsp&nbsp&nbspBLOG</h2>
+        <img src="./img/head_front.png" id="front" class="photo1">
+        <img src="./img/sec_head_bottom.png" id="head_bottom">
+    </section>
+    <section id="sec_card">
+        <div id="profile_photo">
+            <img src="./img/profile_photo.jpg" alt="">
+        </div>
+        <div id="profile_card">
+            <div>学校:电子科技大学</div>
+            <div>学号:2024090903030</div>
+            <div>姓名:蒋州婷</div>
+            <div>邮箱:604716015@qq.com</div>
+            <div>联系电话:17308037155</div>
+        </div>
+        <!-- 也可以在这里加hover！不仅背景多阴影立绘还动 -->
+        <img src="./img/profile_picture.png" id="profile_picture">
+    </section>
+    <section id="sec_intro">
+        <div class="intro_title">
+            <p class="big_title">ABOUT<br>&nbsp&nbsp&nbsp&nbspME</p>
+        </div>
+        <div class="intro">
+            <p>我叫蒋州婷，来自四川成都</p>
+            <p>- 性格方面，我开朗活泼，待人真诚用心，介于i/e人之间，可灵活切换</p>
+            <p>- 兴趣爱好方面，听歌唱歌画画都很喜欢 但是是体育苦手一枚！</p>
+            <p>- 乐于探索和发现，喜欢尝试不同的事情，比如曾做过非常多种类的学生工作，并且对于自己未知的、新的技能与领域抱有求知欲
+            </p>
+        </div>
+        <i class="iconfont icon-iconfontzhizuobiaozhun023143" id="intro_bg"></i>
+    </section>
+    <section id="sec_hobby">
+        <div class="sec_hobby_top">
+            <div id="hobby_video">
+                <!-- <video class="video" loop="loop" controls="controls" poster="./img/video_cover.png"> -->
+                <video class="video" loop="loop" controls="controls" poster="./img/video_cover.png">
+                    <source src="./img/performance.mp4" type="video/mp4">
+                    </source>
+                </video>
+            </div>
+            <div id="hobby_title">
+                <p class="big_title">HOBBY</p>
+            </div>
+        </div>
+        <div id="sec_hobby_detail">
+            <h3>音乐</h3>
+            <p>听歌 唱歌！都喜欢！右边这个是草地音乐节表演的视频 &#10084我是粉色衣服，虽然不是很完美啦</p>
+            <h3>画画 看别人画画(bushi)</h3>
+            <p>平时会摸点小鱼 尝试新东西!!!</p>
+        </div>
+    </section>
+    <section id="sec_cats">
+        <div id="cats_title">一些些校猫的猫片~</div>
+        <div id="shell">
+            <div class="cat_box">
+                <img src="./img/CAT1.JPG">
+            </div>
+            <div class="cat_box">
+                <img src="./img/CAT2.JPG">
+            </div>
+            <div class="cat_box">
+                <img src="./img/CAT3.JPG">
+            </div>
+            <div class="cat_box">
+                <img src="./img/CAT4.JPG">
+            </div>
+            <div class="cat_box">
+                <img src="./img/CAT5.JPG">
+            </div>
+        </div>
+    </section>
+    <section id="sec_music">
+        <div class="slider">
+            <div class="slider-wrapper">
+                <img src="./img/slider_1.jpg" alt="" />
+            </div>
+            <div class="slider-footer">
+                <p>鏡音リン・初音ミク - ねぇねぇねぇ。 (呐呐呐。)</p>
+                <ul class="slider-indicator">
+                    <li class="active"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+                <div class="toggle">
+                    <button class="prev">&lt;</button>
+                    <button class="next">&gt;</button>
+                </div>
+            </div>
+        </div>
+        <div class="music_title">
+            <p class="music_title1">术</p>
+            <p class="music_title2">力</p>
+            <p class="music_title3">口</p>
+        </div>
+    </section>
+
+
+    <footer>
+        <img src="./img/footer_photo.png" class="footer_photo">
+        <p>by @猫染</p>
+        <P>QQ:604716015</P>
+    </footer>
+
+    <button onclick="scrollToTop()" class="top">
+        ↑
+    </button>
+
+
+
+    <script>
+        // PART1 视差滚动
+        let img_behind = document.querySelector('#behind')
+        let img_front = document.querySelector('#front')
+        let text = document.querySelector('#sec1_text')
+
+        window.addEventListener('scroll', function () {
+            // 正是因为前面使用了absolute才可以在这里通过修改top来改变相对父元素位置
+            // 注意这个思路！
+            let value = window.scrollY;
+            img_behind.style.top = value * 0.5 + 'px'
+            img_front.style.top = value * 0 + 'px'
+            text.style.marginRight = value * 4 + 'px'
+            text.style.marginTop = value * 1.5 + 'px'
+        })
+
+
+
+        // PART2 头像旋转 
+        let img = document.querySelector('#profile_photo img')
+        // 鼠标聚焦 悬停在图片上时触发
+        img.onmouseover = function () {
+            // 当前旋转角度 初始值为0
+            let current = 0
+            // 旋转步数计数器 初始值为0
+            let flag = 0
+            // 一步4度 一共90步
+
+            // 开一个定时器 10ms跑一次
+            let temTemp = setInterval(function () {
+                // 还没转满一圈
+                if (flag != 90) {
+                    // 每次增加4度，对360取模，确保角度在0-359度之间
+                    current = (current + 4) % 360
+                    flag++
+
+                    // 鼠标移出
+                    img.onmouseout = function () {
+                        // 清除之前的定时器，停止旋转动画
+                        clearInterval(temTemp)
+                        // 开启新的定时器 反向旋转恢复图片
+                        // 这个自动恢复 不用关闭 所以也不用拿个变量接收了
+                        setInterval(function () {
+                            // 旋转步数未回到0步 没有完全复原
+                            if (flag != 0) {
+                                // 每次减少4度
+                                current = (current - 4) % 360
+                                flag--
+                            } else {
+                                // 若旋转步数回到0步，将当前角度置为0
+                                current = 0
+                                return
+                            }
+
+                            // 通过修改图片的transform属性实现旋转效果
+                            img.style.transform = 'rotate(' + current + 'deg)'
+                            // console.log(current)
+                        }, 10)
+                    }
+                } 
+                else {
+                    // 若旋转步数达到90步 当前角度0
+                    current = 0
+                    return
+                }
+                // 修改transform属性
+                img.style.transform = 'rotate(' + current + 'deg)'
+                console.log(current)
+            }, 10)
+        };
+
+        // PART3 置顶
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+
+
+
+        // PART4 轮播图
+        const sliderData = [
+            { url: './img/slider_1.jpg', title: '鏡音リン・初音ミク - ねぇねぇねぇ。'},
+            { url: './img/slider_2.jpg', title: '初音ミク・重音テト - メズマライザー'},
+            { url: './img/slider_3.jpg', title: 'DECO*27 - モニタリング feat. 初音ミク' },
+            { url: './img/slider_4.jpg', title: 'ピノキオピー - 神っぽいな feat. 初音ミク' },
+            { url: './img/slider_5.jpg', title: 'ピノキオピー - 転生林檎 feat. 初音ミク' },
+            { url: './img/slider_6.jpg', title: 'kafu [オリジナル] - ツミキフォニイ  偽物'},
+            { url: './img/slider_7.jpg', title: '重音テト - 小小的我 マサラダ'},
+            { url: './img/slider_8.jpg', title: 'DECO27 - 火花 feat. 初音ミク'},
+        ]
+
+        const slider_img = document.querySelector('.slider-wrapper img')
+        const slider_p = document.querySelector('.slider-footer p')
+        // 背景色不用变
+        // console.log(slider_img.src)
+        // 还是查一下是否成功获取对象吧、、
+        const next = document.querySelector('.next')
+        let i = 0
+        // i要一直用 所以不能写成局部变量 index
+        next.addEventListener('click', function () {
+            i++
+            if (i >= sliderData.length) {
+                i = 0
+            }
+            // console.log(sliderData[i])
+            slider_img.src = sliderData[i].url
+            slider_p.innerHTML = sliderData[i].title
+            // 圆点
+            // 把有类名的删掉 用.active可以直接索引
+            document.querySelector('.slider-indicator .active').classList.toggle('active')
+            // remove不用加点
+            // 用i来索引要加active的点
+            // document.querySelector('.slider-indicator li:nth-child(i+1)').classList.remove('active')
+            // 还是得``不然一起当成字符串识别了 注意``位置哈 需要格式化字符串的就别用''了
+            // document.querySelector(.slider-indicator li:nth-child(`${i+1}`)).classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.toggle('active')
+        })
+
+        const prev = document.querySelector('.prev')
+        prev.addEventListener('click', function () {
+            i--
+            if (i < 0) {
+                i = sliderData.length - 1
+            }
+            // console.log(sliderData[i])
+            slider_img.src = sliderData[i].url
+            slider_p.innerHTML = sliderData[i].title
+            // 圆点
+            // 把有类名的删掉 用.active可以直接索引
+            document.querySelector('.slider-indicator .active').classList.toggle('active')
+            // remove不用加点
+            // 用i来索引要加active的点
+            // document.querySelector('.slider-indicator li:nth-child(i+1)').classList.remove('active')
+            // 还是得``不然一起当成字符串识别了 注意``位置哈 需要格式化字符串的就别用''了
+            // document.querySelector(.slider-indicator li:nth-child(`${i+1}`)).classList.remove('active')
+            document.querySelector(`.slider-indicator li:nth-child(${i + 1})`).classList.toggle('active')
+        })
+
+        // 定时器
+        let slider_timerid = setInterval(function () {
+            // 利用js自动调用点击事件！！！！不用重新写一遍
+            next.click()
+            // 调用→() 
+            // 等价于next.onclick = function(){}
+        }, 1000)
+
+        // 鼠标经过停止
+        const slider = document.querySelector('.slider')
+        slider.addEventListener('mouseenter', function () {
+            clearInterval(slider_timerid)
+        })
+
+        // 鼠标离开
+        slider.addEventListener('mouseleave', function () {
+            clearInterval(slider_timerid)
+            // 开启定时器
+            // 必须这样不能只是单纯的打开 要保证获取到了实时的新的id 不然下次又关不了了
+            // 不能用let了 不然就重新新建一个局部变量了
+            slider_timerid = setInterval(function () {
+                // 利用js自动调用点击事件！！！！不用重新写一遍
+                next.click()
+                // 调用→() 
+                // 等价于next.onclick = function(){}
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

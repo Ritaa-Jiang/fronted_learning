@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 对象
+        // 所有key都是字符串 可以不加引号
+        // 数字会自动转换 混合型必须加引号
+        // let a = {
+        //     1 : "ok",
+        //     2 : "thank"
+        // };
+        // console.log(a)
+
+        // 对象内部方法的引用
+        // var obj = {
+        //     p: function (x) {
+        //         // x =  2 * x;
+        //         // console.log(x);
+        //         return 2*x;
+        //     }
+        // };
+
+        // obj.p(1) // 2
+
+        // // 对象的引用 指向同一个内存地址
+        // let o1 = {};
+        // let o2 = o1;
+
+        // o1.a = 1;//创建一个新的键值对
+        // console.log(o2)
+
+
+        // 属性的查看
+        // var obj = {
+        //     key1: 1,
+        //     key2: 2
+        // };
+
+        // console.log(Object.keys(obj));
+        // ['key1', 'key2']
+        // 只会显示key
+
+
+
+        // 函数
+        // 函数name属性
+        // 因为函数可以当作参数，所以函数可以通过变量声明的方式传给另一个函数，这个时候如果使用name 就可以知道传入参数是什么函数 很方便
+        let myFunc = function () { };
+        function test(f) {
+            console.log(f.name);
+        }
+        test(myFunc) // myFunc
+
+        // 函数 tostring()
+        function f() {
+            a();
+            b();
+            c();
+            // yes
+        }
+        console.log(f.toString())
+        // function f() {
+        //  a();
+        //  b();
+        //  c();
+        //  //yes
+        // }    
+        // 函数内部的注释也会被返回
+
+        // 关于函数作用域案例的试验
+        // var a = 1;
+        // var x = function (y) {
+        //     console.log(y);
+        // };
+
+        // function f() {
+        //     var a = 2;
+        //     x(a);
+        // }
+
+        // f()
+
+        // 对匿名函数使用这种“立即执行的函数表达式”
+        // 写法一
+        // var tmp = newData;
+        // processData(tmp);
+        // storeData(tmp);
+
+        // // 写法二
+        // (function () {
+        //     var tmp = newData;
+        //     processData(tmp);
+        //     storeData(tmp);
+        // }());
+        // 上面代码中，写法二比写法一更好，因为完全避免了污染全局变量。
+
+
+
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

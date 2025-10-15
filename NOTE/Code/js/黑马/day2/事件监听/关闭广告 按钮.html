@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .ad {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: relative;
+        }
+        .close {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            cursor: pointer;
+            /* 这个在可以点的地方注意一下 */
+        }
+    </style>
+</head>
+<body>
+    <button>点击</button>
+    <div class="ad">
+        <div class="close">
+            X
+        </div>
+    </div>
+    <script>
+        // 点击按钮弹出对话框
+        // 1. 事件源 按钮
+        // 2.事件类型 点击鼠标
+        // 3.事件处理程序 弹出对话框
+        const btn = document.querySelector('button')
+        btn.addEventListener('click',function(){
+            alert('你早啊')
+            // 多次点每次都会执行 触发一次一次
+            // 注意click是字符串
+        })
+
+
+        // 关闭广告
+        // 获取事件源
+        const close = document.querySelector('.close')
+        const ad = document.querySelector('.ad')
+        // 事件监听
+        close.addEventListener('click',function(){
+            // ad.display.
+            ad.style.display = 'none';
+            // 先选择style属性再选择display
+        })
+    </script>
+    
+</body>
+</html>

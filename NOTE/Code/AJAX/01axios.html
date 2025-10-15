@@ -1,0 +1,32 @@
+<!-- api直接点击也可以看到 api内容 目标资源 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <p class="my-p"></p>
+  <!-- 引入axios库 -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // 2.使用axios函数
+    axios({
+        // 访问的地址
+        url:'http://hmajax.itheima.net/api/province'
+    // 调用then的方法
+    }).then(result => {
+        // 打印返回的result
+        console.log(result)
+        console.log(result.data.list)
+        //数组
+        // 数组没法直接插入标签 数组拼接转字符串
+        console.log(result.data.list.join('<br>'))
+        //把省份列表插入标签
+        document.querySelector('.my-p').innerHTML = result.data.list.join('<br>')
+    })
+  </script>    
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!-- 列表渲染和删除 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h3>小黑的书架</h3>
+    <ul>
+      <!-- 是li渲染多次 -->
+      <li v-for="item in booksList":key="item.id">
+        <!-- key这个要加上！！！！下节课讲 -->
+        <!-- <span>{{item}}</span> -->
+        <span>{{item.name}}</span>
+        <!-- item是对象哈 不是item[index] -->
+        <span>{{item.author}}</span>
+        <!-- 注意参数写法哈!!!!!!! -->
+        <button @click="del(item.id)">删除</button>
+        <!-- 有id优先使用id删 更稳定 通过id删除数组中的项 事件注册 -->
+      </li>
+    </ul>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        booksList: [
+          { id: 1, name: '《红楼梦》', author: '曹雪芹' },
+          { id: 2, name: '《西游记》', author: '吴承恩' },
+          { id: 3, name: '《水浒传》', author: '施耐庵' },
+          { id: 4, name: '《三国演义》', author: '罗贯中' }
+        ]
+        // 数据都扔在数组里哈
+      },
+      methods:{
+        del(id) {
+          console.log('删除',id)
+          // 其实用console才是好习惯
+          // 方便debug
+          // filter过滤,不会删除原数组！！只会得到新数组
+          // this.booksList.filter(item => item.id !== id)
+          this.booksList = this.booksList.filter(item => item.id !== id)
+          // 注意箭头函数哈！
+          // splice也行filter更常用
+          // pop不行
+        }
+      }
+    })
+  </script>
+</body>
+</html>

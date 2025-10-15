@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>年会抽奖</title>
+  <style>
+    .wrapper {
+      width: 840px;
+      height: 420px;
+      background: url(./images/bg01.jpg) no-repeat center / cover;
+      padding: 100px 250px;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <strong>传智教育年会抽奖</strong>
+    <h1>一等奖：<span id="one">???</span></h1>
+    <h3>二等奖：<span id="two">???</span></h3>
+    <h5>三等奖：<span id="three">???</span></h5>
+  </div>
+  <script>
+    // <!-- 数组里面随机抽取奖项 但是如果一个人得过奖了 这个人就应该删掉 -->
+    // 1.声明数组
+    const personArr = ['sungho','riwoo','jaehyun','taesan','leehan']
+    // 2.先做一等奖
+    // 2.1生成随机数 数组下标
+    const random = Math.floor(Math.random() * personArr.length)
+    // 取0-1数乘以数组长度然后取整
+    // console.log(personArr[random])
+    // 2.2获取one元素 修改
+    const one = document.querySelector('#one')
+    one.innerHTML = personArr[random]
+
+    // 2.3从数组里面删掉
+    // 法一
+    // delete personArr[random]
+    // 注意对象的删除是怎么写的 这个是看的网道的写法
+    // 法二
+    personArr.splice(random,1)
+    // 从random开始删除一个
+    // console.log(personArr)
+
+
+    // 二等奖
+    // 数组的长度会减少的！！！！！！！！length的值会变
+    // 区分对象和数组的各种操作length变不变
+    const random2 = Math.floor(Math.random() * personArr.length)
+    const two = document.querySelector('#two')
+    two.innerHTML = personArr[random2]
+    personArr.splice(random2,1)
+    // console.log(personArr)
+
+    // 三等奖就不写了同理
+
+
+    // 注意删的是新建的这个数组里面的不会影响元素本身哈
+
+  </script>
+</body>
+
+</html>

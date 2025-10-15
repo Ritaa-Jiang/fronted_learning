@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <img src="{{ imgUrl }}" alt=""> -->
+    <!-- 标签里无法使用插值噢 -->
+    <img v-bind:src="imgurl" v-bind:title="msg" alt="">
+    <img :src="imgurl" :title="msg" alt="">
+    <!-- 这时用f12看已经渲染进去了 -->
+    <!-- 如果不写msg会在console有报错 -->
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        imgurl: './imgs/10-01.png',
+        msg:'hello'
+      }
+    })
+
+  </script>
+</body>
+</html>

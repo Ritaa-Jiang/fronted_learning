@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // setInterval(function(){
+        //     console.log('一秒一次')
+        // },1000)
+        // 1s=1000ms
+        // 经常使用匿名函数
+
+
+        function fn(){
+            console.log('一秒一次')
+        }
+        // setInterval(fn,1000)
+        // setInterval(fn(),1000)
+        // 写函数名 不要写括号
+        // 有名:函数名 不要加小括号
+        // 加了小括号就立刻执行
+        // 如果要加小括号需要加'''
+
+        // 需要每隔一段时间执行一个代码的时候就可以使用这个
+        let n = setInterval(fn,1000)
+        console.log(n)
+        // 可以输出定时器的编号 自动生成的定时器id 不都一样 不是按1/2/3这样排的
+        // 关掉定时器要对应的!
+
+        // 关闭定时器
+        clearInterval(n)
+        // 这样才能关 一般是有事件的时候才会关掉
+
+        // 重开
+        n = setInterval(fn,1000)
+    </script>
+</body>
+</html>

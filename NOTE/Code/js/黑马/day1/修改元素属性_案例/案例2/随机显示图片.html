@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../images/1.webp" alt="">
+    <script>
+        // 取N到M的随机整数
+        function getrandom(N,M) {
+            return Math.floor(Math.random() * (M - N +1)) + N
+        }
+
+
+        // 1.获取图片对象
+        const img = document.querySelector('img')
+        // 2.随机得到序号
+        const random = getrandom(1,6)
+        // 更换路径
+        img.src = `../images/${random}.webp`
+        // 是使用的飘号不是引号哈!!!中间直接填入变量
+        // 如果没有规律就放在数组里面呗
+    </script>
+</body>
+</html>

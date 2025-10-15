@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            /* width: 200px; */
+            height: 200px;
+            background-color: pink;
+            /* 转换 */
+            /* display: inline; */
+        }        
+        span {
+            /* 宽和高这样设置都没有效果 除非转换 */
+            width: 100px;
+            height: 100px;
+            background-color: hotpink;
+            /* 行内元素转换为块级元素 */
+            /* display: block; */
+        }
+    </style>
+</head>
+<body>
+    <!-- 块级元素 -->
+    <!-- 并且因为父级元素是body 所以和页面一样宽 -->
+    <div>比较霸道,自己独占一行</div>
+    <!-- 行内元素 和内容宽度一样 -->
+    <span>pink老师你怎么穿着品如的衣服呢</span> <strong>品如的衣服</strong>
+    <span>pink老师</span> <strong>品如的衣服</strong>
+    <!-- 行内块元素 -->
+    <!-- 和行内元素不一样是可以设置宽高 -->
+    <!-- 还有一个特点是中间有空隙 -->
+    <input type="text">
+    <input type="text">
+</body>
+</html>

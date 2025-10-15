@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert("hello world")
+
+        // let a = 1;
+        // a++
+        // console.log(a)
+
+        // let a = 5;
+        // if(a === 5){
+        //     console.log(a)
+        // }
+        // switch(a){
+        //     case 1:
+        //         console.log(1);
+        //         break;
+        //     case 5:
+        //         console.log(5);
+        //         break;
+        //     default:
+        //         console.log("False");
+        // }
+
+        // a===5 ? console.log(5) : console.log("False");
+
+        // for(let a=1;a<10;a++){
+        //     if(a === 6){
+        //         // continue;
+        //         break;
+        //     }
+        //     console.log(a);
+        // }
+        top:
+            for(let i=0;i<3;i++){
+                for(let j=0;j<3;j++)
+            {
+                // continue要写在前面哦
+                if(i===1 && j===1){
+                    continue top;
+                }
+                console.log('i='+i+',j='+j);
+                // 这个比较像是python字符串的拼接了
+                // 把1那一层循环1，1以后的全部跳过了!很好用
+            }
+            }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

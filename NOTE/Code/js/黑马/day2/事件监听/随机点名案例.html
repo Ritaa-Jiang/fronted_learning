@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+        // 数据数组
+        const arr = ['sungho', 'riwoo', 'jaehyun', 'taesan', 'leehan']
+        const qs = document.querySelector('.qs')
+        // 业务一 1.开始按钮模块
+        const start = document.querySelector('.start')
+        // 点击事件
+        let timerid
+        let random
+        // 本来是在函数里面可以用const应为不用担心不能改的事
+        start.addEventListener('click', function () {
+            // let timerid = setInterval(function () {
+            // 不行 需要使用全局变量 局部变量外部访问不了
+            // setInterval(function () {
+            timerid = setInterval(function () {
+                // 随机数
+                random = parseInt(Math.random() * arr.length)
+                // const random = parseInt(Math.random() * arr.length)
+                // console.log(arr[random])
+                // 改到qs那里
+                // qs.innerHTML = 'arr[random]'
+                // 有变量的时候注意要使用反引号和格式化输出
+                // qs.innerHTML = `${arr[random]}`
+                // 只是变量别用字符串的引号啊
+                qs.innerHTML = arr[random]
+                // 一定要确保对象获取成功 console验证 而且可以复制哈
+            },100)
+            if(arr.length === 1){
+                start.disabled = true
+                end.disabled = true
+                // 禁用 如果要禁用就是等于true
+            }
+        })
+        // 2.关闭按钮模块
+        const end = document.querySelector('.end')
+        // 想要关闭定时器？定时器需要有名字 函数里面声明的变量是局部变量
+        // 写在外面变成全局变量 
+        end.addEventListener('click',function(){
+            clearInterval(timerid)
+            // 把抽过的删掉
+            // arr.splice(arr[random],1)
+            // random是局部变量
+            // 随机的需要全局变量
+            arr.splice(arr[random],1)
+            // 注意语法格式
+        })
+        // 反正排错的时候记得先确认一下对象有没有获取到 用console排错一下
+
+
+        // 最后如果数组里只有一个值了 把两个按钮禁用
+    </script>
+</body>
+
+</html>

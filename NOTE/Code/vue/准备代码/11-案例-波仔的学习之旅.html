@@ -1,0 +1,46 @@
+<!-- 这轮播图ho -->
+<!-- 可以把之前的轮播图改了 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- 本来还以为要直接用一个flag来控制 写一个if 但是vue里面的东西在整个app里都通用 直接用表达式就可以！ -->
+    <!-- 要有表达式概念 -->
+    <button v-show="index > 0" @click="index--">上一页</button>
+    <div>
+      <img :src="list[index]" alt="">
+      <!-- 这整个app已经被vue监控了 可以直接用下面设置的vue里的东西的 -->
+    </div>
+    <!-- 用list.length! 总是想去用实际的值 要写的比较好维护 动态的才好 -->
+    <!-- 已经注意要-1哈 -->
+    <!-- <button v-show="index < list.length" @click="index++">下一页</button> -->
+    <button v-show="index < list.length-1" @click="index++">下一页</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        index: 0,
+        // 默认值0
+        list: [
+          './imgs/11-00.gif',
+          './imgs/11-01.gif',
+          './imgs/11-02.gif',
+          './imgs/11-03.gif',
+          './imgs/11-04.png',
+          './imgs/11-05.png',
+        ]
+      }
+    })
+  </script>
+</body>
+</html>

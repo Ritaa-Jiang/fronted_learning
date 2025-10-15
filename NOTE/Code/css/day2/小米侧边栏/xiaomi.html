@@ -1,0 +1,45 @@
+<!-- 链接行内元素变为竖着显示 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a {
+            /* 先转换为块级 */
+            display: block;
+            /* 设置长宽高 */
+            width: 230px;
+            height: 40px;
+            /* bgc 背景颜色 */
+            background-color: #535758;
+            font-size: 15px;
+            color: #fff;
+            text-decoration: none;
+            /* 缩进 也可以用盒子模型 */
+            /* ti也可 输入首字母就可以 */
+            text-indent: 2em;
+            /* 垂直居中小技巧 当然有更简单的办法 */
+            line-height: 40px;
+        }
+        /* 设置鼠标变色 */
+        a:hover {
+            /* 区分color和backgroundcolor！！！ */
+            background-color: #ff6f00;
+            /* 用小工具做出来颜色一摸一样噢 */
+        }
+    </style>
+</head>
+<body>
+    <!-- 空链接 -->
+    <a href="#">1 sungho</a>
+    <a href="#">2 riwoo</a>
+    <a href="#">3 jaehyun</a>
+    <a href="#">4 taesan</a>
+    <a href="#">5 leehan</a>
+    <a href="#">6 woohak</a>
+</body>
+</html>
+
+<!-- 小工具可以查大小 取色直接再粘贴过来 还可以把图片顶置 很方便噢 -->

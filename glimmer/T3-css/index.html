@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>明日方舟</title>
+    <style>
+        body {
+            display: flex;
+            /* 视口高度 随视口居中 */
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            width: 800px;
+            /* 均匀分布 */
+            justify-content: space-around;
+        }
+
+        .pattern {
+            display: flex;
+            flex-direction: column;
+            padding: 5px; 
+        }
+
+        .row {
+            display: flex;
+            margin-bottom: 5px;
+        }
+
+        /* #pattern1 */
+        /* 注意是row这个列里面的盒子要居中和左对齐 所以需要正好对小格子的上一级设置主轴对齐方式 */
+        #pattern1 .row {
+            justify-content: center;
+        }
+
+        #pattern2 .row {
+            justify-content: flex-start;
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+            margin-right: 5px;
+        }
+
+        .normal {
+            border: 2.5px solid #808080;
+            background-color: #f8f9fa;
+        }
+
+        .special {
+            background-color: #27a6f3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="patten" id="pattern1">
+            <div class="row">
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box special"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+            </div>
+        </div>
+
+        <div class="patten" id="pattern2">
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box special"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+            <div class="row">
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+                <div class="box normal"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

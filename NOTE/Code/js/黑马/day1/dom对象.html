@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">123</div>
+    <div class="box">abc</div>
+    <p id="nav">导航栏</p>
+    <u class="nav">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </u>
+    <script>
+        // const div1 = document.querySelector('div')
+        // dir专门用来打印对象的
+        // console.dir(div1)
+        // 这个引过来的变量div1也是对象 点开可以看见有非常非常多的属性
+        // 在html是标签 js里是对象
+
+
+        // 获取匹配的第一个元素
+        // const box = document.querySelector('div')
+        // const box = document.querySelector('.box')
+        // console.log(box)
+        // 都选择的是第一个abc那个div/box
+        // 必须加引号 不然当成变量 否则当成变量了
+
+        // const nav = document.querySelector('#nav')
+        // console.log(nav)        
+        // 井号得到id选择器
+
+        // 1.获取ul里的第一个li
+        // const li = document.querySelector('ul li:first-child')
+        // console.log(li)
+        // 选出来第一个 ul li这个是复合选择器
+        // 发现不写first child好像效果也一样？而且不能写second-child啥的
+        // 2.获取所有的li
+        // const lis = document.querySelectorAll('ul li')
+        // console.log(lis)
+
+
+        // 1.获取元素
+        const lis = document.querySelectorAll('.nav li')
+        // 能尽量把从属关系限定好还是先限制一下
+        // 因为要改变所以用let来声明变量
+        // 通过lis里面的方法来得到长度
+        for(let i=0;i < lis.length;i++){
+            console.log(lis[i])
+        }
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

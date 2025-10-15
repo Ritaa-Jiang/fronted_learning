@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <script>
+        // 1.获取元素
+        const box = document.querySelector('.box')
+        // 2.修改样式属性 对象.style.样式属性 = '值' 别忘了跟单位！
+        // 是字符串不是数值
+        box.style.width = '300px'
+        // box.style.background-color = 'hotpink'
+        // 不行 这个会当成减号 报错
+        // 多组单词的采取小驼峰命名法 首字符大写
+        box.style.backgroundColor = 'hotpink'
+        box.style.borderTop = '2px solid blue'
+        // 后面的都是属于这些属性的写法
+    </script>
+</body>
+</html>

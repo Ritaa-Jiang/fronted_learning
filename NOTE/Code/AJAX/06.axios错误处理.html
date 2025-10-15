@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>06.axios错误处理</title>
+</head>
+
+<body>
+  <button class="btn">注册用户</button>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+    /*
+      注册用户: http://hmajax.itheima.net/api/register
+      请求方法: POST
+      参数名:
+        username: 用户名 (中英文和数字组成, 最少8位)
+        password: 密码 (最少6位)
+
+      目标: 点击按钮, 通过axios提交用户和密码, 完成注册
+    */
+
+
+   // 希望后端给的不同的报错信息给出不同的处理 而且报错信息这个时候只能在console里显示
+   // 希望可以将错误信息反馈给用户
+   document.querySelector('.btn').addEventListener('click', () => {
+    axios({
+      url: 'http://hmajax.itheima.net/api/register',
+      // 指定请求方法
+      method: 'post',
+      data: {
+        username: 'itheima007',
+        password: '7654321'
+      }
+    }).then(result => {
+      // axios响应对象啊
+      console.log(result)
+    }).catch(error => {
+      // axios错误对象
+      console.log(error)
+      //这个时候要取得message
+      console.log(error.response.data.message)
+      alert(error.response.data.message)
+    })
+   })
+  </script>
+</body>
+
+</html>

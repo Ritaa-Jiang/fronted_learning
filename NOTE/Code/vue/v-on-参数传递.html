@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      border: 3px solid #000000;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px;
+      width: 200px;
+    }
+    h3 {
+      margin: 10px 0 20px 0;
+    }
+    p {
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="app">
+    <div class="box">
+      <h3>小黑自动售货机</h3>
+      <button @click="buy">可乐5元</button>
+      <button @click="buy2">咖啡10元</button>
+      <!-- 发现一个问题 如果我注册了buy 和buy2 但是只给buy写了下面methods里的方法 然后buy2没写 那buy也用不了了 -->
+      <!-- 如果把buy2的注册删掉就好了 看来注册必须要完整不然跑不了 -->
+    </div>
+    <p>银行卡余额: {{ money }} 元</p>
+    <!-- 不能写死 -->
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        money:100
+      },
+      methods: {
+        buy() {
+          this.money-=5
+        },
+        buy2() {
+          this.money-=10
+        }
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" value="电脑">
+    <script>
+        // 获取元素
+        const uname = document.querySelector('input')
+        // 取标签
+        // 获取值
+        // console.log(uname.value)
+        // console.log(uname.innerHTML)
+        // innerHTML仅限普通元素 拿不到表单里面的
+        // 设置表单的值
+        uname.value = '我要买电脑'
+        console.log(uname.type)
+        uname.type = 'password'
+        // 字符串!!!!!!
+        // 变成密码
+    </script>
+</body>
+</html>

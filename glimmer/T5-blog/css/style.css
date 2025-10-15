@@ -1,0 +1,615 @@
+
+.nav {
+    width: 50px;
+    height: 400px;
+    display: flex;
+    /* 只有在父元素用了flex和子元素用了position才会产生冲突 */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #eee7e1;
+    border-radius: 40px;
+    transition: .3s;
+    overflow: hidden;
+    /* 不是absolute是fixed啦 */
+    position: fixed;
+    left: 2%;
+    top: 23%;
+    /* 其实也可以加一个滚动 */
+    z-index: 12;
+}
+
+.nav_icon {
+    display: block;
+    height: 10%;
+    width: 85%;
+    margin: 10px;
+    border-radius: 15px;
+    position: relative;
+    transition: .3s;
+    color: #7b502d;
+}
+
+.nav_icon i {
+    font-size: 30px;
+    position: absolute;
+    margin: 7px 0 0 5px;
+}
+
+.nav_icon:nth-child(1)::before,
+.nav_icon:nth-child(5)::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    border-color: aqua;
+    position: absolute;
+    bottom: 10px;
+}
+
+.nav_icon span {
+    position: relative;
+    top: 9px;
+    left: 45px;
+    font: 500 15px '';
+    opacity: 0;
+    transition: .5s;
+}
+
+.nav:hover {
+    width: 125px;
+}
+.nav_icon:hover {
+    background-color: #e6cfb0;
+}
+/* 当移到nac上span的变化nav */
+.nav:hover span{
+    opacity: 1;
+}
+
+#sec_head {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* padding: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+#sec_head .photo1{
+    /* 子绝父相 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* object-fit 属性指定图片如何适应其容器，cover 表示保持宽高比并覆盖整个容器 */
+    object-fit: cover;
+    /* 禁止元素成为鼠标事件的目标，即鼠标事件会穿透该元素 */
+    pointer-events: none;
+}
+
+#sec_head img #front {
+    /* 设置元素的堆叠顺序，确保该图片在其他图片之上 */
+    z-index: 11;
+}
+
+#sec_head #sec1_text {
+    position: absolute;
+    right: -350px;
+    color: #fff;
+    /* 设置字体大小为视口宽度的 7.5% */
+    font-size: 7.5vw;
+}
+
+#head_bottom {
+    width: 100%;
+    position: absolute;
+    bottom: -10px;
+}
+
+#sec_card {
+    /* border-radius: 20px; */
+    position: relative;
+    /* 有子元素需要定位 */
+    /* 元素不要排太满 这样刚刚好 */
+    width: 70%;
+    height: 60vh;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff;    */
+    transition: .3s;
+    background-image: linear-gradient(to bottom right, #f8e5b8, #e6c29a, #c89d78);
+    cursor: pointer;
+}
+
+#sec_card:hover {
+    box-shadow: 40px 30px 0 10px #37210e;
+    /* box-shadow: 10px 10px 0 10px #37210e; */
+}
+
+/* 身份内容使用flex 左对齐 */
+#profile_photo {
+    width: 20%;
+    aspect-ratio: 1 / 1;
+    /* 宽高比 1:1，高度 = 宽度 */
+    /* 新的浏览器才支持 */
+    background-color: pink;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 30px;
+    /* 没事 不会吧图片撑大 */
+    /* 超出的照片删掉 */
+}
+
+#profile_photo img {
+    width: 100%;
+}
+
+#profile_card {
+    border-radius: 20px;
+    padding: 50px;
+    width: 50%;
+    height: 55%;
+    margin: 20px 20px;
+    background-color: #724a27;
+    /* 设置子元素 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* justify-content: flex-start; */
+    font-size: 20px;
+    font-weight: bolder;
+    color: #fff;
+}
+
+#profile_picture {
+    width: 40%;
+    position: absolute;
+    right: -150px;
+    bottom: -130px;
+    z-index: 10;
+}
+
+#sec_intro {
+    /* border-radius: 20px; */
+    position: relative;
+    /* 有子元素需要定位 */
+    /* 元素不要排太满 这样刚刚好 */
+    width: 80%;
+    height: 60vh;
+    margin: 200px auto;
+}
+
+#sec_intro .intro_title {
+    width: 300px;
+    height: 300px;
+    border-radius: 70px;
+    /* 文字居中一下 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 65px;
+    font-weight: bolder;
+    color: #eee7e1; */
+    background-color: #41270e;
+    transition: .3s;
+
+    position: absolute;
+    left: 11%;
+    top: 20%;
+
+    cursor: pointer;
+}
+
+.big_title {
+    font-size: 65px;
+    font-weight: bolder;
+    color: #eee7e1;
+}
+
+#sec_intro .intro {
+    width: 500px;
+    height: 100px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bolder;
+    position: absolute;
+    right: 2%;
+    top: 30%;
+
+    z-index: 5;
+
+}
+
+#intro_bg {
+    color: #cea887;
+    position: absolute;
+    right: 10%;
+    top: 20%;
+    font-size: 300px;
+    opacity: 0.3;
+    /* 半透明 */
+    /* 背景不单调咯 */
+}
+
+#sec_intro .intro_title:hover {
+    background-color: #522e02;
+    border-radius: 70px 110px;
+    /* 自己突然想到的动效^^ */
+}
+
+
+/* 清空视频播放控件 不然有点丑 */
+/* // 全屏按钮 */
+video::-webkit-media-controls-fullscreen-button {
+    display: none;
+}
+
+/* //播放按钮 */
+video::-webkit-media-controls-play-button {
+    display: none;
+}
+
+/* //进度条 */
+video::-webkit-media-controls-timeline {
+    display: none;
+}
+
+/* //观看的当前时间 */
+video::-webkit-media-controls-current-time-display {
+    display: none;
+}
+
+/* //剩余时间 */
+video::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
+/* //音量按钮 */
+video::-webkit-media-controls-mute-button {
+    display: none;
+}
+
+/* // 画中画 */
+video::-webkit-media-controls-toggle-closed-captions-button {
+    display: none;
+}
+
+/* //音量的控制条 */
+video::-webkit-media-controls-volume-slider {
+    display: none;
+}
+
+/* //所有控件 */
+video::-webkit-media-controls-enclosure {
+    display: none;
+}
+
+#sec_hobby {
+    /* border-radius: 20px; */
+    position: relative;
+    /* 有子元素需要定位 */
+    /* 元素不要排太满 这样刚刚好 */
+    width: 70%;
+    height: 60vh;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff;    */
+    transition: .3s;
+    background-image: linear-gradient(to bottom right, #f8e5b8, #e6c29a, #c89d78);
+    border-radius: 20px 100px;
+}
+
+#sec_hobby:hover {
+    box-shadow: 20px 30px 0 10px #583519;
+    /* box-shadow: 10px 10px 0 10px #37210e; */
+}
+
+#sec_hobby #hobby_title {
+    width: 300px;
+    height: 150px;
+    border-radius: 30px;
+    /* 文字居中一下 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #41270e;
+
+    position: absolute;
+    right: 11%;
+    top: 10%;
+}
+
+#sec_hobby_detail {
+    font-size: 20px;
+    position: absolute;
+    right: 10%;
+    bottom: 17%;
+    width: 300px;
+    font-weight: bolder;
+    color: #6d4928;
+}
+
+#sec_hobby_detail h3 {
+    color: #41270e;
+    /* 想给标题加个框 */
+    /* text-shadow: 0 0 2px white; */
+    -webkit-text-stroke: 0.7px #805731;
+}
+
+#hobby_video {
+    width: 45%;
+    overflow: hidden;
+    position: absolute;
+    top: 25%;
+    left: 3%;
+    border-radius: 15px;
+    /* 确保视频不超出 */
+    cursor: pointer;
+}
+
+#hobby_video video {
+    width: 100%;
+}
+
+
+
+
+#sec_cats {
+    /* border-radius: 20px; */
+    position: relative;
+    /* 有子元素需要定位 */
+    /* 元素不要排太满 这样刚刚好 */
+    width: 70%;
+    height: 60vh;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #fff;    */
+    transition: .3s;
+    /* background-image: linear-gradient(to bottom right, #f8e5b8, #e6c29a, #c89d78); */
+}
+
+#cats_title {
+    position: absolute;
+    top: -90px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: #eee7e1;
+}
+
+
+#shell {
+
+    width: 100%;
+    height: 400px;
+    /* box元素水平排列 */
+    display: flex;
+}
+
+.cat_box {
+    /* flex: 1：让所有弹性盒模型对象的子元素都有相同的长度，且忽略它们内部的内容 */
+    flex: 1;
+    overflow: hidden;
+    transition: .5s;
+    margin: 0 20px;
+    /*盒子中间需要距离*/
+    box-shadow: 10px 10px 15px rgba(75, 48, 19, 0.5);
+    border: 10px solid #fff;
+    border-radius: 20px;
+}
+
+.cat_box>img {
+    /* 图片宽度超出box，高度和box一样，形成横向压缩的效果 */
+    width: 200%;
+    height: 100%;
+    /*必须加上这个！！不然图片在未被悬停的时候会被压扁而不是被“裁切一样的压缩*/
+    /* object-fit(指定元素的内容应该如何去适应指定容器的高度与宽度。):cover---保持原有尺寸比例。但部分内容可能被剪切。 */
+    object-fit: cover;
+    transition: .5s;
+}
+
+/* 使元素的flex-basis为40%，即在flex布局中占据40%的空间，形成图片展开的效果 */
+.cat_box:hover {
+    flex-basis: 40%;
+}
+
+/* 悬停在class为box的元素上时，选择内部的img元素,使图片不要放大成原大小，不然就有类似于放大镜的效果了，这样让图片展开更丝滑好看*/
+.cat_box:hover>img {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+#sec_music {
+    position: relative;
+    width: 70%;
+    height: 50vh;
+    margin: 200px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+    background-image: linear-gradient(to bottom right, #f8e5b8, #e6c29a, #c89d78);
+}
+
+.music_title {
+    position: absolute;
+    right: 0;
+    width: 35%;
+    height: 100%;
+    font-size: 100px;
+    color: #583519;
+    /* 想给标题加个框 */
+    /* text-shadow: 0 0 px #d8ad84; */
+    text-shadow: 3px 3px 0 #d8ad84,-3px -3px 0 #d8ad84,-3px 3px 0 #d8ad84,3px -3px 0 #d8ad84
+    /* 搜了一下资料还是这个更好 可以改一下前面的 */
+    /* -webkit-text-stroke: 2px #d8ad84; */
+}
+
+/* 强行定个位 */
+.music_title1 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.music_title2 {
+    position: absolute;
+    top: 120px;
+    right: 50px;
+}
+
+.music_title3 {
+    position: absolute;
+    bottom: 20px;
+    left: 50px;
+}
+
+.slider {
+    /* width: 560px;
+    height: 400px; */
+    height: 100%;
+    width: 60%;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+}
+
+.slider-wrapper {
+    width: 100%;
+    height: 320px;
+}
+
+.slider-wrapper img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.slider-footer {
+    height: 80px;
+    background-color: #684524;
+    padding: 12px 12px 0 12px;
+    position: relative;
+}
+
+.slider-footer .toggle {
+    position: absolute;
+    right: 0;
+    top: 12px;
+    display: flex;
+}
+
+.slider-footer .toggle button {
+    margin-right: 12px;
+    width: 28px;
+    height: 28px;
+    appearance: none;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.slider-footer .toggle button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.slider-footer p {
+    margin: 0;
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.slider-indicator {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.slider-indicator li {
+    width: 8px;
+    height: 8px;
+    margin: 4px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.4;
+    /* 半透明和不透明的圆点效果 */
+    cursor: pointer;
+}
+
+.slider-indicator li.active {
+    width: 12px;
+    height: 12px;
+    opacity: 1;
+}
+
+
+footer {
+    /* 查出来是footer的问题 但是也没有margin什么的撑开 晕 先这样改一下看看 */
+    /* width: 98.5%; */
+    /* 又没有问题了 晕 */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+    background-color: #41270e;
+    color: white;
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    height: 70px;
+
+}
+
+footer .footer_photo {
+    width: 300px;
+    position: absolute;
+    /* 不行 不然会撑大盒子 overflow又会全部遮掉 */
+    /* 对body0verflow更不行 */
+    /* left: -50px; */
+    left: 0;
+    /* bottom: -150px; */
+    bottom: 0;
+    z-index: 0;
+}
+
+.top {
+    position: fixed;
+    bottom: 80px;
+    right: 30px;
+    border: none;
+    background-color: rgb(176, 115, 78);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 20px;
+    z-index: 20;
+}
+
+
+.top:hover {
+    background-color: rgb(89, 60, 26);
+}

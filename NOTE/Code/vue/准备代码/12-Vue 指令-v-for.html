@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <h3>小黑水果店</h3>
+    <ul>
+      <!-- 是li需要多次渲染 所以是给li不是ul加 -->
+      <!-- <li v-for="(item,index) in list">水果1</li> -->
+      <li v-for="(item,index) in list">{{ item }} - {{ index }}</li>
+      <li v-for="(item,index) in list">{{ item }}</li>
+      <li v-for="(item,index) in list">水果</li>
+      <li v-for="item in list">{{ item }}</li>
+      <!-- 不用index的时候可以省略 -->
+      <!-- <li></li>
+      <li></li> -->
+      <!-- 不需要三个li 一个就够了 -->
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        list: ['西瓜', '苹果', '鸭梨']
+      }
+    })
+  </script>
+</body>
+</html>

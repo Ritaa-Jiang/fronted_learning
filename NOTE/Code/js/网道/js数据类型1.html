@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // let a = 1;
+        // console.log(typeof(a));
+        // // 输出：number
+        // // 里面放变量或者字面量都行
+        // console.log(typeof("yes"));
+        // // 输出：string
+        // function f() {}
+        // console.log(typeof(f));
+        // "function"
+
+        //  if(!undefined){
+        //     console.log("hello")
+        //  }
+
+
+
+        // // 浮点数陷阱
+        // console.log(0.1+0.2 == 0.3)
+        // // false
+        // console.log(0.1+0.2 === 0.3)
+        // // false
+        // console.log(0.1+0.2)
+        // // 0.30000000000000004
+        // console.log(0.3 / 0.1)
+        // // 2.9999999999999996
+        // console.log((0.3 - 0.2) === (0.2 - 0.1))
+        // // false
+
+
+        // 便于注释 使用字符串的方法split割开 再连在一起
+        // 换行的时候就相当于字符串里带了一个换行符哈
+        // 这样就可以输出多行了
+        // 实现方式就是使用tostring用字符串的形式输出源码 挺曲线救国的
+        (function () { /*
+            line 1
+            line 2
+            line 3
+        */}).toString().split('\n').slice(1, -1).join('\n')
+        // "line 1
+        // line 2
+        // line 3"
+        // 去掉首尾的注释得字符串
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="./css/index.css" />
+<title>记事本</title>
+</head>
+<body>
+
+<!-- 主体区域 -->
+<section id="app">
+  <!-- 输入框 -->
+  <header class="header">
+    <h1>小黑记事本</h1>
+    <input v-model="todoname" placeholder="请输入任务" class="new-todo" />
+    <button @click="add" class="add">添加任务</button>
+  </header>
+  <!-- 列表区域 -->
+  <section class="main">
+    <ul class="todo-list">
+      <!-- 多次渲染——v-for   找清楚渲染对象！！！！！！ -->
+      <li class="todo" v-for="(item,index) in list" :key="item.id">
+        <!-- 要记得写key唯一值 -->
+        <div class="view">
+          <!-- <span class="index">{{ item.id }}</span> <label>跑步一公里</label> -->
+          <span class="index">{{ index + 1  }}</span> <label>{{item.name}}</label>
+          <!-- 写index更好 因为这样删除新增都连贯 -->
+          <!-- 调试要注意加一 -->
+          <!-- 用id删哈！！ -->
+          <button @click="del(item.id)" class="destroy"></button>
+        </div>
+      </li>
+    </ul>
+  </section>
+  <!-- 统计和清空 -->
+  <footer class="footer" v-show="list.length > 0">
+    <!-- 统计 -->
+    <!--  -->
+    <span class="todo-count">合 计:<strong> {{ list.length }} </strong></span>
+    <!-- 清空 -->
+    <button @click="clear" class="clear-completed">
+      清空任务
+    </button>
+  </footer>
+</section>
+
+<!-- 底部 -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.16/dist/vue.js"></script>
+<script>
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      todoname:'',
+      // js里面一般用单引号 前面用双引号更多 
+      // 再提醒一下记得统一
+      // 然后todoName这样子驼峰式也很好 比下划线直观点
+      // 一般都是数组结构
+      list: [
+        { id:1,name:'跑步一公里'},
+        { id:2,name:'游泳100米'},
+        { id:3,name:'跳绳200次'},
+      ]
+    },
+    methods: {
+      del(id) {
+        // 使用filter
+        // 记得用原数组接受
+        this.list = this.list.filter(item => item.id != id)
+      },
+      add() {
+        // 添加到最前面的判断
+        // trim方法就是去除两边空格，也可以加左右表示去除左右方向的空格
+        // trim可以去除字符串两端的空白字符串
+        if(this.todoname.trim() === '') {
+          alert('请输入任务名称')
+          return
+          // 注意就直接返回了哈
+        }
+        // 因为要加数组最前面 push是末尾
+        this.list.unshift({
+          id:+new Date(),
+          // 时间戳 这个暂时可以用来确保是唯一的
+          // id要保证唯一 一般情况下是动态生成
+          // 弹幕：id不知道的话，就一直维护一个最大id就好了，每次新增+1
+          name:this.todoname
+          // 已经绑定了所以直接取用就可以了
+        })
+        // 注意形式 this.list.unshift({元素1，元素2}) 分清楚哪里是哪里
+        // 讲输入框清空
+        this.todoname = ''
+      },
+      clear() {
+        this.list = []
+      }
+    }
+  })
+
+</script>
+</body>
+</html>

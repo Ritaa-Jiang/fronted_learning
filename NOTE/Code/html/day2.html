@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- table>tr*3>td*4 -->
+    <!-- table>tr>td  一行一列-->
+    <!-- 按下tab 这下就可以 自动生成多行多列-->
+    <!-- tr套td 行套列 -->
+    <table witdth=30px border="1" >
+        <thead>
+            <tr>
+                <!-- <td colspan="2">数量</td> -->
+                <td colspan="2">数量</td>
+                <!-- 这样数量这一行就是由两格构成了 -->
+                <td>名字</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="2">1</td>
+                <td>yes</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>no</td>
+            </tr>            
+        </tbody>
+    </table>
+
+
+    <!-- 列表 -->
+     <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+     </ul>
+     <ol>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+     </ol>
+     <dl>   
+        <dt>名词1</dt>   
+        <dd>名词1解释1</dd>   
+        <dd>名词1解释2</dd> 
+     </dl>     
+
+     <form action="">
+        <input type="text" name="hello" value="1">
+        <!-- 这个好像是单标签 -->
+        <input type="button">
+        <input type="image">
+        <!-- 图像形式的提交按钮 -->
+        <input type="submit">
+        <label for="sex">男</label>
+        <input type="radio" name="sex"  id="sex" />
+        <!-- 相当于这个是可选中的 旁边有一个男 用来标识 -->
+        <select>
+            <option>选项1</option>
+            <option>选项2</option>
+            <option>选项3</option>
+        </select>
+        <textarea rows="3" cols="20">   
+            文本内容 
+        </textarea>
+     </form>
+     <form>
+		<input type=“text " name=“username”>
+		<select name=“jiguan”>  
+		 <option>北京</option>
+		</select> 
+		<textarea name= "message">
+		</textarea>
+	</form>
+</body>
+</html>

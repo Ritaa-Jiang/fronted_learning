@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: url(./images/desktop_1.jpg) no-repeat top center/cover;
+            /* 不平铺 垂直靠上 水平居中 用cover占满页面 */
+            /*  用/* 这里center和cover之间加上/是简写的语法要求，background同时存在背景位置和背景大小时要用/隔开 */
+            /* 则这里必须写 /  ,否则整个背景图片样式没有解析出来。 */
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function getrandom(N,M) {
+            return Math.floor(Math.random() * (M - N +1)) + N
+        }
+
+        const random = getrandom(1,10)
+        // console.log(document.body)
+        document.body.style.backgroundImage = `url(./images/desktop_${random}.jpg)`
+        // 是因为整个页面body只有一个所以不需要用queryselector 直接拿来作对象用也可
+        // 换${}和反引号 模板字符串 反引号引入变量
+        // 因为 background是符合属性 所以不用写Image 也可以
+    </script>
+</body>
+</html>

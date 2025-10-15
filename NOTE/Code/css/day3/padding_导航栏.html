@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .nav {
+            height: 41px;
+            background-color: #fcfcfc;
+            /* 合写方便点 */
+            border-top: 3px solid #ff8500;
+            border-bottom: 1px solid #edeef0;
+            /* 行高可以继承 很方便！ */
+            line-height: 41px; 
+            /* 在没学定位到情况下可以使文字居中 */
+        }
+        /* 大小可以用ps测量 */
+        /* a { */
+        /* 注意写nav里的a！！！复合的一定要习惯用 从属关系 */
+        .nav a {
+            /* 如果要w300这样 只能首字母才能这么带值的缩写 */
+            font-size: 12px;
+            color: #4c4c4c;
+            text-decoration: none;
+            /* 需要控制a有一个大小 但是因为宽度是padding给的 所以就改个高度 */
+            height: 41px;/* 和nav一个高度 */
+            /* 如果只写height高度不生效 因为是行内元素 */
+            /* 检查高度是否生效可以用f12 */
+            /* 但是又需要在一行 所以改成行内块 */
+            display: inline-block;
+            /* 设置padding */
+            padding: 0 20px;
+            /* 0不能漏写 一个数就不是那个意思了 */
+        }
+        /* 接下来处理的是hover变底色 */
+        .nav a:hover {
+            background-color: #eee;
+            color: #ff8500;
+        }
+ 
+    </style>
+</head>
+<body>
+    <!-- 输入div.nav即可 -->
+    <!-- 先写最外边div 写这个div的时候就给明确class -->
+    <!-- 这些元素其实本质上就是盒子 -->
+    <div class="nav">
+        <!-- 行内的这种还是用复制粘贴快捷键比a*4好点 不然写到一排了 -->
+        <a href="#">新浪</a>
+        <a href="#">手机新浪网</a>
+        <a href="#">移动客户端</a>
+        <a href="#">微博</a>
+    </div>
+</body>
+</html>

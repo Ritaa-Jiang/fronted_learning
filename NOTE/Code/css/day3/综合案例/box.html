@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>小米产品模块</title>
+    <style>
+        /* 这个没有想到 但是如果要按照ui图做 这个是必须要写的 */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #f5f5f5;
+        }
+        .box {
+            width: 298px;
+            height: 415px;
+            /* 水平居中 */
+            /* margin: 0 auto; */
+            margin: 100px auto;
+            /* 往下移动一点 */
+            /* 背景色 */
+            background-color: #fff;
+        }
+        /* 注意什么时候用复合 */
+        /* 类里面套标签 */
+        .box img{
+            width: 100%;
+            /* 这样就确保不会超出 */
+            height: 45%;
+        }
+        .box .review{
+            /* 小距离 */
+            /* margin: 20px; */
+            padding: 0 28px;
+            margin-top: 30px;
+            /* 上下左右 */
+            /* 因为这个段落没有width属性 所以padding不会撑开盒子的宽度 */
+            /* 关于上下不能使用padding 因为段落有高度 如果用padding会撑开 所以只能用margin */
+            /* 当然全部用margin也是可以的 */
+            height: 70px;
+            font-size: 14px;
+            /* 注意是font不是text */
+            /* 熟练使用f12布局 */
+        }
+        /* 多用复合也好 比较明确 */
+        /* .appraise其实就够了 */
+        .box .appraise{
+            font-size: 12px;
+            color: #b0b0b0;
+            padding: 0 28px;
+            margin-top: 20px;
+        }
+        /* 因为要选中两项 所以就用这个大的项目 */
+        .box .info {
+            font-size: 14px;
+            margin-top: 15px;
+            padding: 0 28px;
+            /* 其实我感觉padding全部合在一起也行 */
+        }
+        .box .info h4{
+            display: inline-block;
+            font-weight: 400;
+        }
+        .box .info span{
+            color: #ff6700;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- 大图 -->
+        <img src="./image.png" alt="">
+        <!-- 评价 -->
+        <p class="review">
+            快递牛，整体不错蓝牙可以秒连，红米给力
+        </p>
+        <!-- 评价 -->
+        <div class="appraise">
+            来自于11111111111的评价
+        </div>
+        <!-- 标题和价格信息 -->
+        <div class="info">
+            <!-- 建议按照意思分成两个部分 -->
+             <!-- …目前还没有学 -->
+            <h4>Redmi Airdots真无线蓝… |</h4>
+            <span>99.9元</span>
+            <!-- 想在一行就是行内块 -->
+        </div>
+
+    </div>
+    
+</body>
+</html>
