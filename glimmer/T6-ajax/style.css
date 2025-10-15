@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4; 
+    color: #333; 
+    margin: 0;
+    padding: 20px;
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+
+/* 总容器 */
+.container {
+    width: 80%;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    color: #579b18; 
+}
+
+/* 按钮 */
+.buttons {
+    /* 居中 */
+    text-align: center;
+    margin: 20px;
+}
+
+button {
+    background-color: #579b18;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    margin: 0 40px;
+}
+
+button:hover {
+    background-color: #37650c;
+}
+
+/* 天气容器 */
+#weather-cards {
+    display: flex;
+    /* 卡片竖向显示便于排列 */
+    flex-direction: column; 
+    /* card之间隔开 */
+    gap: 20px;
+}
+
+/* 单个天气 */
+.weather-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex; 
+    /* 卡片内元素分散 */
+    /* justify-content: space-around;  */
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.weather-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.weather-card .temperature {
+    font-size: 25px;
+    font-weight: bold;
+    color: #dc3545; 
+}
+
+.weather-card .weather {
+    color: #6c757d;
+}
+
+.loading {
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}

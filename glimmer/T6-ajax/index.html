@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>城市天气查询</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>城市实时天气</h1>
+        <div class="buttons">
+            <button id="up_btn">升序</button>
+            <button id="down_btn">降序</button>
+        </div>
+        
+        <div id="weather-cards">
+            <p class="loading">正在加载天气数据中...</p>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
